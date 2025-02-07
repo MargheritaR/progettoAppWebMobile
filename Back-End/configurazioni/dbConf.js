@@ -1,10 +1,10 @@
 const sql = require('mssql');
 
 const config = {
-    user: 'prova',
-    password: 'prova',
+    user: 'admin',
+    password: 'admin',
     server: 'localhost',
-    database: 'ProvaWebMobile',
+    database: 'AppWebMobile',
     options : {
         trustServerCertificate: true,
         trustedConnection: false,
