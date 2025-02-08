@@ -5,7 +5,7 @@ const generateToken = (req, res, next) => {
     const user = req.user;
 
     if (!user) {
-        return res.status(401).json({ error: 'User not authenticated' });
+        return res.status(401).json({ error: 'Utente non autenticato' });
     }
 
     const token = jwt.sign({ email: user.email }, config.jwtSecret, { expiresIn: '1h' });
