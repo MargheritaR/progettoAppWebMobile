@@ -10,7 +10,7 @@ exports.createPost = async (req, res) => {
 
     try{
         await postModel.createPost(post);
-        req.status(201).json({ message: 'Post creato con successo' });
+        res.status(201).json({ message: 'Post creato con successo' });
     } catch (err) {
         res.status(500).json({ message: err.message });
     }

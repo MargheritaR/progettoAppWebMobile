@@ -1,14 +1,24 @@
 const { createUser, authenticateUser } = require('../modelli/utenti');
+const { validationResult } = require('express-validator');
+const { registerUserValidators } = require('../validatori/utentiValidator');
 
-const registerUser = async (req, res) => {
-    const { email, password } = req.body;
-    try {
+const registerUser = [
+    ...registerUserValidators,
+    async (req, res) => {
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+      }
+  
+      const { email, password } = req.body;
+      try {
         await createUser(email, password);
-        res.status(201).json({ message: 'User registered successfully!' });
-    } catch (err) {
+        res.status(201).json({ message: 'Utente registrato con successo!' });
+      } catch (err) {
         res.status(500).json({ error: err.message });
+      }
     }
-};
+  ];
 
 const loginUser = async (req, res, next) => {
     const { email, password } = req.body;
@@ -22,11 +32,11 @@ const loginUser = async (req, res, next) => {
 };
 
 const sendToken = (req, res) => {
-    res.status(200).json({ message: 'Login successful!', token: req.token });
+    res.status(200).json({ message: 'Login effettuato con successo!', token: req.token });
 };
 
 const logoutUser = (req, res) => {
-  res.status(200).json({ message: 'Logout successful!' });
+  res.status(200).json({ message: 'Logout con successo!' });
 };
 
 module.exports = {
