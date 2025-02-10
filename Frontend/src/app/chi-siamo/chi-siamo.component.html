@@ -1,0 +1,19 @@
+<div class="container my-5">
+    <div class="row">
+      <div class="col-12 text-center mb-4">
+        <h2>Chi Siamo</h2>
+
+        <p class="small text-muted">Siamo degli studenti che hanno realizzato una piattaforma in cui le persone possono condividere:</p>
+      </div>
+      <div class="col-12 mb-3" *ngFor="let item of chiSiamoItems">
+        <div class="card border-success">
+          <div class="card-body">
+            <h5 class="card-title text-success">{{ item.title }}</h5>
+            <p class="card-text">{{ item.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  

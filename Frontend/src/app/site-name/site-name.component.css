@@ -1,0 +1,56 @@
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveAround {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.site-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.site-name h1 {
+  font-size: 5rem; 
+  color: green; 
+  font-family: 'Poppins', 'Arial', sans-serif; 
+  font-weight: 900; 
+  animation: slideIn 1s ease-out, moveAround 3s ease-in-out infinite;
+}
+
+.site-name .slogan {
+  font-size: 1.5rem; 
+  color: green; 
+  background-color: #ccffcc; 
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px; 
+  animation: fadeIn 1.1s ease-in-out 1.1s forwards; 
+  opacity: 0; 
+}

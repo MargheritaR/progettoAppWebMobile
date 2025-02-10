@@ -1,0 +1,31 @@
+.navbar {
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.3s;
+  }
+  
+  .navbar:hover {
+    background-color: #218838; /* Cambia leggermente il colore di sfondo al passaggio del mouse */
+  }
+  
+  .navbar-brand,
+  .nav-link {
+    font-size: 1.1em;
+    transition: transform 0.3s, color 0.3s;
+  }
+  
+  .navbar-brand:hover,
+  .nav-link:hover {
+    transform: scale(1.1);
+    color: #ffc107; /* Cambia il colore del link al passaggio del mouse */
+  }
+  
+  .dropdown-menu {
+    background-color: #d4edda; /* Colore di sfondo del menu a tendina */
+  }
+  
+  .dropdown-item:hover {
+    background-color: #c3e6cb; /* Cambia il colore di sfondo al passaggio del mouse */
+  }
+  
+
+  

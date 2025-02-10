@@ -1,0 +1,17 @@
+<div class="container mt-5">
+    <h2 class="text-center text-success">I miei post</h2>
+    <div *ngIf="userPosts.length > 0; else noPosts">
+      <div *ngFor="let post of userPosts" class="card mb-3 border-success">
+        <div class="card-body">
+          <h5 class="card-title text-success">{{ post.title }}</h5>
+          <p class="card-text text-secondary">{{ post.body }}</p>
+          <p class="card-text"><small class="text-muted">Categoria: {{ post.category }}</small></p>
+          <p class="card-text"><small class="text-muted">Creato il: {{ post.createdAt | date }}</small></p>
+        </div>
+      </div>
+    </div>
+    <ng-template #noPosts>
+      <p class="text-center text-secondary">Non hai ancora pubblicato alcun post.</p>
+    </ng-template>
+  </div>
+  
